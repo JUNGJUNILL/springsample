@@ -10,6 +10,7 @@ public class BookController {
 	
 	@RequestMapping(value = "/create" , method = RequestMethod.GET)
 	public ModelAndView create() {
+		System.out.println("hello world");
 		return new ModelAndView("book/create"); 
 	}
 
