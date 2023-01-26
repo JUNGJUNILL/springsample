@@ -19,6 +19,7 @@ public class BookController {
 	@RequestMapping(value = "/create" , method = RequestMethod.GET)
 	public ModelAndView create() {
 		return new ModelAndView("book/create"); 
+		//æ»≥Á«œººø‰!
 	}
 	
 	@RequestMapping(value="/create" , method = RequestMethod.POST)
