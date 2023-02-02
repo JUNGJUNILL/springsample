@@ -107,9 +107,17 @@ public class BookController {
 	@RequestMapping(value = "list")  
 	public ModelAndView list(@RequestParam Map<String, Object> map) {  
 		ModelAndView mv = new ModelAndView();  
+		
+        for (Entry<String, Object> entrySet : map.entrySet()) {
+            System.out.println("list="+entrySet.getKey() + " : " + entrySet.getValue());
+        }
 
 		List<Map<String,Object>> list = this.bookService.list(map); 
 		mv.addObject("data",list); 
+		
+		if(map.containsKey("keyword")){
+			mv.addObject("keyword",map.get("keyword")); 
+		}
 		mv.setViewName("/book/list");
 		
 		
